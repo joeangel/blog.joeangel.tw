@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      pages: read
+      pages: write
 
     steps:
 
