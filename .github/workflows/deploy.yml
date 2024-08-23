@@ -89,6 +89,10 @@ jobs:
       pages: write
       id-token: write
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
 
       - name: Deploy to GitHub Pages
@@ -100,7 +104,4 @@ jobs:
           error_count: 10
           reporting_interval: 5000
           preview: false
-        env:
-          name: github-pages
-          url: ${{ steps.deployment.outputs.page_url }}
 
