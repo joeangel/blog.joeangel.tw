@@ -78,6 +78,6 @@ Thumbs.db
 *.swn
 
 # github-markdown-toc temporary files
-README.md.orig.*
-README.md.toc.*
+*.md.orig.*
+*.md.toc.*
 
