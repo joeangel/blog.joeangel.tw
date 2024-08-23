@@ -14,7 +14,6 @@ on:
       - master  # Optional: run on pull requests to the master branch
 
 permissions:
-permissions:
   actions: write   # Enables the workflow to interact with GitHub Actions workflows, such as triggering
                    # other workflows, canceling them, or updating their statuses. This is useful when your
                    # CI/CD pipeline involves multiple interdependent workflows or when you need to report
