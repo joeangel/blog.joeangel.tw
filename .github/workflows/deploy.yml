@@ -14,8 +14,23 @@ on:
       - master  # Optional: run on pull requests to the master branch
 
 permissions:
-  id-token: write  # Request the id-token permission
-  contents: write  # Ensure you also have write permission for repository contents
+permissions:
+  actions: write   # Enables the workflow to interact with GitHub Actions workflows, such as triggering
+                   # other workflows, canceling them, or updating their statuses. This is useful when your
+                   # CI/CD pipeline involves multiple interdependent workflows or when you need to report
+                   # build statuses back to GitHub.
+
+  id-token: write  # Grants the workflow permission to generate an OpenID Connect (OIDC) token.
+                   # This is necessary for actions that require secure authentication to external systems
+                   # using the OIDC standard, such as deploying to a cloud provider or interacting with certain APIs.
+
+  contents: write  # Allows the workflow to create, modify, and delete content in the repository.
+                   # This is essential for tasks like committing changes, updating files, or pushing new code
+                   # to the repository, particularly for deployment purposes or CI/CD pipelines.
+
+  pages: write     # Provides the ability to manage GitHub Pages content, including creating or updating
+                   # the Pages site. This permission is required for deploying static sites to GitHub Pages
+                   # from the workflow, ensuring that the generated content is published correctly.
 
 env:
   TZ: 'Asia/Taipei'
