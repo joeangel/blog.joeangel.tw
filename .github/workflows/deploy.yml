@@ -64,13 +64,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: public/  # Hexo generates static files in the 'public' directory
+          path: ./public  # Hexo generates static files in the 'public' directory
 
   report-build-status:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Report Build Status
         run: |
           gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
@@ -84,7 +85,12 @@ jobs:
     needs: report-build-status
     runs-on: ubuntu-latest
 
+    permissions:
+      pages: write
+      id-token: write
+
     steps:
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
@@ -94,4 +100,7 @@ jobs:
           error_count: 10
           reporting_interval: 5000
           preview: false
+        env:
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
 

@@ -103,4 +103,4 @@ theme: landscape
 deploy:
   type: 'git'
   repo: https://github.com/joeangel/blog.joeangel.tw.git
-  branch: main
+  branch: master
