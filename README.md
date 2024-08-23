@@ -106,5 +106,16 @@ npx yaml-lint .github/workflows/deploy.yml
 
 ## TODOs
 
-- use `hexo-generator-sitemap`
+- `README.md`
+  - [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/monitoring-workflows/adding-a-workflow-status-badge)
+- Hexo
+  - use `hexo-generator-sitemap`
+- CI/CD
+  - stage: build
+    - Checkout source code
+      - add: Setting up auth for fetching submodules
+      - add: Fetching submodules
+      - add: Persisting credentials for submodules
+      - del: Checking out the ref
+    - Build with Jekyll
 
