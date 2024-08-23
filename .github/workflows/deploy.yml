@@ -19,6 +19,7 @@ jobs:
 
     permissions:
       contents: read
+      metadata: read
 
     steps:
 
@@ -52,6 +53,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
+    permissions:
+
     steps:
 
       - name: Report Build Status
@@ -70,6 +73,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      metadata: read
       pages: write
 
     environment:
