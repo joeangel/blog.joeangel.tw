@@ -88,7 +88,11 @@ npx yaml-lint .github/workflows/deploy.yml
 
 ### Set up GitHub Pages with GitHub Actions
 
-- [GitHub Pages - Hexo](https://hexo.io/docs/github-pages)
+- Set up: [GitHub Pages - Hexo](https://hexo.io/docs/github-pages)
+- Original gh-pages: [https://joeangel.github.io/blog.joeangel.tw/](https://joeangel.github.io/blog.joeangel.tw/)
+- Also see
+  - Joeangel default gh-pages: [joeangel.github.io](joeangel.github.io)
+  - GitHub repo: [https://github.com/joeangel/joeangel.github.io](https://github.com/joeangel/joeangel.github.io)
 
 ## References
 
