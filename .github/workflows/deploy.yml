@@ -31,12 +31,14 @@ permissions:
                    # the Pages site. This permission is required for deploying static sites to GitHub Pages
                    # from the workflow, ensuring that the generated content is published correctly.
 
-env:
-  TZ: 'Asia/Taipei'
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
 
@@ -70,6 +72,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     steps:
 
       - name: Report Build Status
@@ -86,6 +93,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       pages: write
       id-token: write
 
