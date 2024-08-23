@@ -12,6 +12,8 @@
    * [Hints](README.md#hints)
       * [Navigating to Sections in Vim](README.md#navigating-to-sections-in-vim)
       * [Validate YAML file](README.md#validate-yaml-file)
+   * [Common issues](README.md#common-issues)
+      * [Set up GitHub Pages with GitHub Actions](README.md#set-up-github-pages-with-github-actions)
    * [References](README.md#references)
    * [TODOs](README.md#todos)
 <!--te-->
@@ -81,6 +83,12 @@ Validate YAML file
 ```shell
 npx yaml-lint .github/workflows/deploy.yml
 ```
+
+## Common issues
+
+### Set up GitHub Pages with GitHub Actions
+
+- [GitHub Pages - Hexo](https://hexo.io/docs/github-pages)
 
 ## References
 
