@@ -19,7 +19,6 @@ jobs:
 
     permissions:
       contents: read
-      metadata: read
 
     steps:
 
@@ -73,7 +72,6 @@ jobs:
     permissions:
       contents: read
       id-token: write
-      metadata: read
       pages: write
 
     environment:
