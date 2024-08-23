@@ -1,0 +1,75 @@
+name: Hexo CI/CD
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+  pull_request:
+    branches:
+      - main  # Optional: run on pull requests to the main branch
+
+env:
+  TZ: 'Asia/Taipei'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Timezone set Asia/Taipei
+        run: sudo timedatectl set-timezone 'Asia/Taipei'
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Compatible with your Hexo dependencies
+
+      - name: Install dependencies
+        run: yarn install  # Since your packageManager is yarn
+
+      - name: Clean previous builds
+        run: yarn clean  # Runs 'hexo clean' via yarn
+
+      - name: Generate static files
+        run: yarn build  # Runs 'hexo generate' via yarn
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: public/  # Hexo generates static files in the 'public' directory
+
+  report-build-status:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Report Build Status
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
+            -F github_run_id="$GITHUB_RUN_ID" \
+            -F conclusion="$CONCLUSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONCLUSION: success
+
+  deploy:
+    needs: report-build-status
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: github-pages
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
+          preview: false
+
