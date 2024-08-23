@@ -1,3 +1,7 @@
+# GitHub Actions workflow for Hexo CI/CD and Pages Build Deployment
+# This workflow is designed to build a Hexo static site,
+# report the build status, and deploy the site to GitHub Pages.
+
 name: Hexo CI/CD
 
 on:
