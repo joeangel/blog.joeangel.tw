@@ -47,7 +47,7 @@ jobs:
         run: sudo timedatectl set-timezone 'Asia/Taipei'
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'  # Compatible with your Hexo dependencies
 
