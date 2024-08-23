@@ -70,10 +70,10 @@ If you're working in Vim and want to quickly jump to a specific section in a mar
 ## References
 
 - Hexo
-  - [Hexo zh-tw docs](https://hexo.io/zh-tw/docs/)
+  - [Hexo](https://hexo.io)
   - [Hexo - Github](https://github.com/hexojs/hexo)
 - Orange blog
-  - [https://blog.orange.tw/](https://blog.orange.tw/)
+  - [blog.orange.tw](https://blog.orange.tw/)
   - [blog.orange.tw - Github](https://github.com/orangetw/blog.orange.tw)
 
 ## TODOs
