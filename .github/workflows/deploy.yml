@@ -1,13 +1,17 @@
+# GitHub Actions workflow for Hexo CI/CD and Pages Build Deployment
+# This workflow is designed to build a Hexo static site,
+# report the build status, and deploy the site to GitHub Pages.
+
 name: Hexo CI/CD
 
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
+      - master  # Trigger on push to the master branch
 
   pull_request:
     branches:
-      - main  # Optional: run on pull requests to the main branch
+      - master  # Optional: run on pull requests to the master branch
 
 env:
   TZ: 'Asia/Taipei'
