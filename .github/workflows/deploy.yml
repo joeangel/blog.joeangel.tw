@@ -55,7 +55,6 @@ jobs:
 
     permissions:
       contents: read
-      pages: write
 
     steps:
 
