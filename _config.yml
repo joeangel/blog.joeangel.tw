@@ -100,7 +100,8 @@ theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: 'git'
-  repo: https://github.com/joeangel/blog.joeangel.tw.git
-  branch: gh-pages
+## Now, we use GitHub Actions to run CI/CD
+#deploy:
+#  type: 'git'
+#  repo: https://github.com/joeangel/blog.joeangel.tw.git
+#  branch: gh-pages
