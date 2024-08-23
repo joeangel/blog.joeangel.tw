@@ -82,7 +82,7 @@ jobs:
           CONCLUSION: success
 
   deploy:
-    needs: report-build-status
+    needs: build
     runs-on: ubuntu-latest
 
     permissions:
