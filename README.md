@@ -11,6 +11,7 @@
       * [Setup Guide](README.md#setup-guide)
    * [Hints](README.md#hints)
       * [Navigating to Sections in Vim](README.md#navigating-to-sections-in-vim)
+      * [Validate YAML file](README.md#validate-yaml-file)
    * [References](README.md#references)
    * [TODOs](README.md#todos)
 <!--te-->
@@ -67,11 +68,26 @@ For detailed instructions on how to configure your Hexo project similar to `blog
 
 If you're working in Vim and want to quickly jump to a specific section in a markdown file, check out our detailed [Navigating to Sections in Vim Guide](./guides/navigate-to-section-in-vim.md).
 
+### Validate YAML file
+
+Requirement
+
+```shell
+npm install -g yaml-lint
+```
+
+Validate YAML file
+
+```shell
+npx yaml-lint .github/workflows/deploy.yml
+```
+
 ## References
 
 - Hexo
   - [Hexo](https://hexo.io)
   - [Hexo - Github](https://github.com/hexojs/hexo)
+  - [hexo GitHub Actions Deploy - blog.yangjerry.tw](https://blog.yangjerry.tw/2022/04/19/hexo-github-actions-deploy/)
 - Orange blog
   - [blog.orange.tw](https://blog.orange.tw/)
   - [blog.orange.tw - Github](https://github.com/orangetw/blog.orange.tw)
