@@ -13,6 +13,10 @@ on:
     branches:
       - master  # Optional: run on pull requests to the master branch
 
+permissions:
+  id-token: write  # Request the id-token permission
+  contents: write  # Ensure you also have write permission for repository contents
+
 env:
   TZ: 'Asia/Taipei'
 
