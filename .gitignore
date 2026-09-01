@@ -37,6 +37,9 @@ build/Release/
 node_modules/
 jspm_packages/
 
+# This project uses Yarn as its canonical package manager.
+package-lock.json
+
 # Typescript v1 declaration files
 typings/
 
@@ -80,4 +83,3 @@ Thumbs.db
 # github-markdown-toc temporary files
 *.md.orig.*
 *.md.toc.*
-

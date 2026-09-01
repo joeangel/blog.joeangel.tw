@@ -34,7 +34,7 @@ jobs:
           node-version: '20'  # Compatible with your Hexo dependencies
 
       - name: Install dependencies
-        run: yarn install  # Since your packageManager is yarn
+        run: yarn install --frozen-lockfile
 
       - name: Clean previous builds
         run: yarn clean  # Runs 'hexo clean' via yarn
@@ -91,4 +91,3 @@ jobs:
           error_count: 10
           reporting_interval: 5000
           preview: false
-
