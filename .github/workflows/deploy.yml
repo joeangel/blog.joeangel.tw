@@ -49,6 +49,7 @@ jobs:
           path: ./public  # Hexo generates static files in the 'public' directory
 
   report-build-status:
+    if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
 
@@ -67,6 +68,7 @@ jobs:
           CONCLUSION: success
 
   deploy:
+    if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
 
