@@ -10,7 +10,7 @@
 	"doc-gen": "gh-md-toc --insert --no-backup --hide-footer README.md guides/*.md"
   },
   "hexo": {
-    "version": "7.3.0"
+    "version": "8.1.2"
   },
   "dependencies": {
     "hexo": "^8.1.2",
